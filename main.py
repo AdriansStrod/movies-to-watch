@@ -21,20 +21,36 @@ while True:
         # https://www.w3schools.com/python/python_dictionaries.asp
         # https://www.w3schools.com/python/python_lists_add.asp
         title = input("Enter movie title: ")
-        rating = input("Enter movie rating: ")
+        rating = int(input("Enter movie rating: "))
+        Vardnica={
+            "title" : title , 
+            "rating" : rating,
+            "watched": False
+        }
+        movies.append(Vardnica)
         pass
     elif choice == "2":
         # https://www.w3schools.com/python/python_lists_sort.asp
         # https://www.w3schools.com/python/python_dictionaries_access.asp
+        print("Visas filmas pec ratinga")
+        def sort_rating(movies):
+            return int(movies["rating"])
+        movies.sort(key = sort_rating)
+        print(movies)
         pass
+        
     elif choice == "3":
         # https://www.w3schools.com/python/python_lists_comprehension.asp
         # https://www.w3schools.com/python/python_dictionaries_access.asp
+        for movie in movies:
+            if movie["watched"] == False:
+                print(movie)
         pass
     elif choice == "4":
         # https://www.w3schools.com/python/python_lists_change.asp
         # https://www.w3schools.com/python/python_dictionaries_change.asp
         id = int(input("Enter the index of the movie to mark: "))
+
     elif choice == "5":
         # https://www.w3schools.com/python/python_lists_remove.asp
         id = int(input("Enter the index of the movie to remove: "))
